@@ -1,0 +1,185 @@
+1. What is difference in Overloading and Over riding
+
+•	When two or more methods in the same class have the same name but different parameters, it’s called Overloading.
+•	When the method signature (name and parameters) are the same in the superclass and the child class, it’s called Overriding.
+•	Overriding implements Runtime Polymorphism whereas Overloading implements Compile time polymorphism.
+•	The method Overriding occurs between superclass and subclass. Overloading occurs between the methods in the same class.
+•	Overriding methods have the same signature i.e. same name and method arguments. Overloaded method names are the same but the parameters are different.
+•	With Overloading, the method to call is determined at the compile-time. With overriding, the method call is determined at the runtime based on the object type.
+•	If overriding breaks, it can cause serious issues in our program because the effect will be visible at runtime. Whereas if overloading breaks, the compile-time error will come and it’s easy to fix.
+	
+	
+2.If both the functions are statis can we over ride
+
+•	No, we cannot override static methods because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. 
+•	So, we cannot override static methods.The calling of method depends upon the type of object that calls the static method. It means:
+•	If we call a static method by using the parent class object, the original static method will be called from the parent class.
+•	If we call a static method by using the child class object, the static method of the child class will be called.
+•	In the following example, the ParentClass has a static method named display() and the ChildClass also has the same method signature. The method in the derived class (ChildClass) hides the method in the base class. 
+
+3. Diffference bew Final , Finally and Finalize
+o	Final:
+	final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+	final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+	Once declared, final variable becomes constant and cannot be modified.
+	final method cannot be overridden by sub class.
+	final class cannot be inherited.
+	Final method is executed only when we call it.
+
+o	Finally:
+	finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.
+	Finally block is always related to the try and catch block in exception handling.
+	finally block runs the important code even if exception occurs or not.
+	finally block cleans up all the resources used in try block
+	Finally block is executed as soon as the try-catch block is executed.
+	It's execution is not dependant on the exception.
+
+o	Finalize:
+	finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+	finalize() method is used with the objects.
+	finalize method performs the cleaning activities with respect to the object before its destruction.
+	finalize method is executed just before the object is destroyed.
+
+4.What are maker Interfaces
+	
+o	An interface that does not contain methods, fields, and constants is known as marker interface. 
+o	In other words, an empty interface is known as marker interface or tag interface. It delivers the run-time type information about an object. 
+o	It is the reason that the JVM and compiler have additional information about an object. The Serializable and Cloneable interfaces are the example of marker interface. 
+o	In short, it indicates a signal or command to the JVM.
+o	Uses of Marker Interface:
+	Marker interface is used as a tag that inform the Java compiler by a message so that it can add some special behavior to the class implementing it. 
+	Java marker interface are useful if we have information about the class and that information never changes, in such cases, we use marker interface represent to represent the same. 
+	Implementing an empty interface tells the compiler to do some operations.
+	It is used to logically divide the code and a good way to categorize code. It is more useful for developing API and in frameworks like Spring.
+o	Built-in Marker Interface:
+	In Java, built-in marker interfaces are the interfaces that are already present in the JDK and ready to use. There are many built-in marker interfaces some of them are:
+•	Cloneable Interface
+•	Serializable Interface
+•	Remote Interface
+	
+
+
+5.What is Singleton class
+
+o	In object-oriented programming, a singleton class is a class that can have only one object (an instance of the class) at a time. 
+o	After the first time, if we try to instantiate the Singleton class, the new variable also points to the first instance created. 
+o	So whatever modifications we do to any variable inside the class through any instance, affects the variable of the single instance created and is visible if we access that variable through any variable of that class type defined. 
+o	Purpose of Singleton Class:
+	The primary purpose of a Single class is to restrict the limit of the number of object creation to only one. 
+	This often ensures that there is access control to resources, for example, socket or database connection.
+	The memory space wastage does not occur with the use of the singleton class because it restricts the instance creation. 
+	As the object creation will take place only once instead of creating it each time a new request is made.
+	We can use this single object repeatedly as per the requirements. 
+	This is the reason why the multi-threaded and database applications mostly make use of the Singleton pattern in Java for caching, logging, thread pooling, configuration settings, and much more.
+
+6.What is the underlying Data structure for Arraylist and Linkedlist
+
+•	Both ArrayList and LinkedList are two different implementations of the List interface. 
+•	ArrayList is a resizable-array implementation, whereas LinkedList is a Doubly-linked list implementation of the List interface.
+•	
+7.What is hash collitition
+•	A hash is a value in the table or data structure generated by the hash function used to generate that particular table or data structure. 
+•	The table or data structure generated is usually called a hash table. 
+•	It is also generally assumed that the time complexity of accessing data in a hash table is O(1), or constant.
+•	A hash function is a function that takes a set of inputs of any arbitrary size and fits them into a table or other data structure that contains fixed-size elements.	
+•	A collision occurs when more than one value to be hashed by a particular hash function hash to the same slot in the table or data structure (hash table) being generated by the hash function.
+
+
+
+
+8.What are lambda Expressions
+o	Lambda expression is a new and important feature of Java which was included in Java SE 8. 
+o	It provides a clear and concise way to represent one method interface using an expression. It is very useful in collection library. 
+o	It helps to iterate, filter and extract data from collection.
+o	The Lambda expression is used to provide the implementation of an interface which has functional interface. 
+o	It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. 
+o	Java Lambda Expression Syntax
+	(argument-list) -> {body}  
+Java lambda expression is consisted of three components.
+•	Argument-list: It can be empty or non-empty as well.
+•	Arrow-token: It is used to link arguments-list and body of expression.
+•	Body: It contains expressions and statements for lambda expression.
+	
+9.Whats is functional interface
+
+•	Java has forever remained an Object-Oriented Programming language. 
+•	By object-oriented programming language, we can declare that everything present in the Java programming language rotates throughout the Objects, except for some of the primitive data types and primitive methods for integrity and simplicity. 
+•	There are no solely functions present in a programming language called Java. Functions in the Java programming language are part of a class, and if someone wants to use them, they have to use the class or object of the class to call any function.
+•	A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. 
+•	A functional interface can have any number of default methods. Runnable, ActionListener, Comparable are some of the examples of functional interfaces. 
+•	Functional Interface is additionally recognized as Single Abstract Method Interfaces. In short, they are also known as SAM interfaces. Functional interfaces in Java are the new feature that provides users with the approach of fundamental programming. 
+
+10.What are optional classes in Java 8
+
+Optional is a container object used to contain not-null objects. Optional object is used to represent null with absent value. This class has various utility methods to facilitate code to handle values as ‘available’ or ‘not available’ instead of checking null values. It is introduced in Java 8 and is similar to what Optional is in Guava.
+Class Declaration
+Following is the declaration for java.util.Optional<T> class −
+public final class Optional<T> extends Object
+
+11.Whats is factory design pattern and Adapter and difference bew them
+
+	The main differences between Adapter and Proxy patterns are:
+•	While proxy provides the same interface, Adapter provides a different interface that’s compatible with its client
+•	Adapter pattern is used after the application components are designed so that we can use them without modifying the source code. This is in contrast to the Bridge pattern, which is used before the components are designed.
+
+12.What are Solid principles
+
+These principles establish practices that lend to developing software with considerations for maintaining and extending as the project grows. Adopting these practices can also contribute to avoiding code smells, refactoring code, and Agile or Adaptive software development.
+SOLID stands for:
+•	S - Single-responsiblity Principle
+•	O - Open-closed Principle
+•	L - Liskov Substitution Principle
+•	I - Interface Segregation Principle
+•	D - Dependency Inversion Principle
+
+13. What does @component and @scan do in Sprinboot annaotation
+
+With Spring, we use the @ComponentScan annotation along with the @Configuration annotation to specify the packages that we want to be scanned. @ComponentScan without arguments tells Spring to scan the current package and all of its sub-packages.
+
+14.Whats is the Diference bew JPA , Hibernate and ORM
+JPA:
+•	Java Persistence API (JPA) defines the management of relational data in the Java applications.
+•	It is just a specification. Various ORM tools implement it for data persistence.
+•	It is defined in javax.persistence package.
+•	The EntityManagerFactory interface is used to interact with the entity manager factory for the persistence unit. Thus, it provides an entity manager.
+
+Hibernate:
+•	Hibernate is an Object-Relational Mapping (ORM) tool which is used to save the state of Java object into the database.
+•	It is one of the most frequently used JPA implementation.
+•	It is defined in org.hibernate package.
+
+15.What is indexing in Database
+
+Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses required when a query is processed.
+It is a data structure technique which is used to quickly locate and access the data in a database.
+
+16.What are 4 types of Drivers in Jdbc
+
+•	JDBC-ODBC bridge driver
+•	Native-API driver (partially java driver)
+•	Network Protocol driver (fully java driver)
+•	Thin driver (fully java driver)
+•	
+17. What is difrence between @component and @bean and @service
+
+•	@Component is an annotation that allows Spring to automatically detect our custom beans.
+•	@Bean annotation which is applied on a method to specify that it returns a bean to be managed by Spring context. Spring Bean annotation is usually declared in Configuration classes methods.
+•	@Service annotation is used with classes that provide some business functionalities. Spring context will autodetect these classes when annotation-based configuration and classpath scanning is used.
+
+18.What is difference between SOAP and restful services techinically
+
+•	SOAP is a protocol whereas REST is an architectural pattern.
+•	SOAP uses service interfaces to expose its functionality to client applications while REST uses Uniform Service locators to access to the components on the hardware device.
+•	SOAP needs more bandwidth for its usage whereas REST doesn’t need much bandwidth.
+•	Comparing SOAP vs REST API, SOAP only works with XML formats whereas REST work with plain text, XML, HTML and JSON.
+•	SOAP cannot make use of REST whereas REST can make use of SOAP.
+
+19. Difference in POST and PUT
+
+•	PUT method is call when you have to modify a single resource, which is already a part of resource collection.
+•	POST method is call when you have to add a child resource under resources collection.
+
+20. Is react uni directional or Bi directional
+
+•	React doesn't support bi-directional binding to make sure you are following a clean data flow architecture.
+•	The major benefit of this approach is that data flows throughout your app in a single direction, giving you better control over it.
